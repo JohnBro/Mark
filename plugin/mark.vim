@@ -87,9 +87,9 @@ set cpo&vim
 
 nmap <unique> <silent> <F8> <Plug>MarkSet
 vmap <unique> <silent> <F8> <Plug>MarkSet
-nmap <unique> <silent> <leader><F8> <Plug>MarkRegex
-vmap <unique> <silent> <leader><F8> <Plug>MarkRegex
-nmap <unique> <silent> <localleader><F8> <Plug>MarkClear
+nmap <unique> <silent> <localleader><F8> <Plug>MarkRegex
+vmap <unique> <silent> <localleader><F8> <Plug>MarkRegex
+nmap <unique> <silent> <leader><F8> <Plug>MarkClear
 if !hasmapto('<Plug>MarkSet', 'n')
 	nmap <unique> <silent> <leader>m <Plug>MarkSet
 endif
