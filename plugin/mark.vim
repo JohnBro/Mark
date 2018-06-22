@@ -132,12 +132,22 @@ nnoremap <silent> <Plug>MarkClear :call
 "       ANY mark.
 "
 
-nnoremap <silent> <localleader>* :call <sid>SearchCurrentMark()<cr>
-nnoremap <silent> <localleader># :call <sid>SearchCurrentMark("b")<cr>
-nnoremap <silent> <localleader>/ :call <sid>SearchAnyMark()<cr>
-nnoremap <silent> <localleader>? :call <sid>SearchAnyMark("b")<cr>
-" nnoremap <silent> * :if !<sid>SearchNext()<bar>execute "norm! *"<bar>endif<cr>
-" nnoremap <silent> # :if !<sid>SearchNext("b")<bar>execute "norm! #"<bar>endif<cr>
+nnoremap <silent> <Plug>MarkSearch   : call <sid>SearchCurrentMark()<cr>
+nnoremap <silent> <Plug>MarkSearchB  : call <sid>SearchCurrentMark("b")<cr>
+nnoremap <silent> <Plug>MarkSearchX  : call <sid>SearchAnyMark()<cr>
+nnoremap <silent> <Plug>MarkSearchXB : call <sid>SearchAnyMark("b")<cr>
+vnoremap <silent> <Plug>MarkSearch   : call <sid>SearchCurrentMark()<cr>
+vnoremap <silent> <Plug>MarkSearchB  : call <sid>SearchCurrentMark("b")<cr>
+vnoremap <silent> <Plug>MarkSearchX  : call <sid>SearchAnyMark()<cr>
+vnoremap <silent> <Plug>MarkSearchXB : call <sid>SearchAnyMark("b")<cr>
+
+nnoremap <silent> <Plug>MarkWith     : call MarkWith()<cr>
+vnoremap <silent> <Plug>MarkWith     : call MarkWith()<cr>
+
+function! MarkWith()
+    let l:mark = input("Please input the symbol to Mark:")
+    exe "Mark ".l:mark
+endfunction
 
 command! -nargs=? Mark call s:DoMark(<f-args>)
 
