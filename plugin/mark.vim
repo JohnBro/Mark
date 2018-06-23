@@ -141,8 +141,8 @@ vnoremap <silent> <Plug>MarkSearchB  : call <sid>SearchCurrentMark("b")<cr>
 vnoremap <silent> <Plug>MarkSearchX  : call <sid>SearchAnyMark()<cr>
 vnoremap <silent> <Plug>MarkSearchXB : call <sid>SearchAnyMark("b")<cr>
 
-nnoremap <silent> <Plug>MarkWith     : call MarkWith()<cr>
-vnoremap <silent> <Plug>MarkWith     : call MarkWith()<cr>
+nnoremap <silent> <Plug>MarkFor      : call MarkWith()<cr>
+vnoremap <silent> <Plug>MarkFor      : call MarkWith()<cr>
 
 function! MarkWith()
     let l:mark = input("Please input the symbol to Mark:")
