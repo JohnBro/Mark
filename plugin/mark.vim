@@ -85,8 +85,8 @@ set cpo&vim
 
 " Default bindings
 
-nmap <unique> <silent> <F8> <Plug>MarkSet
-vmap <unique> <silent> <F8> <Plug>MarkSet
+nmap <silent> <F8> <Plug>MarkSet
+vmap <silent> <F8> <Plug>MarkSet
 if !hasmapto('<Plug>MarkSet', 'n')
 	" nmap <unique> <silent> <leader>m <Plug>MarkSet
 endif
@@ -140,7 +140,6 @@ vnoremap <silent> <Plug>MarkSearch   : call <sid>SearchCurrentMark()<cr>
 vnoremap <silent> <Plug>MarkSearchB  : call <sid>SearchCurrentMark("b")<cr>
 vnoremap <silent> <Plug>MarkSearchX  : call <sid>SearchAnyMark()<cr>
 vnoremap <silent> <Plug>MarkSearchXB : call <sid>SearchAnyMark("b")<cr>
-
 nnoremap <silent> <Plug>MarkFor      : call MarkWith()<cr>
 vnoremap <silent> <Plug>MarkFor      : call MarkWith()<cr>
 
